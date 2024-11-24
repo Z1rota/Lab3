@@ -14,15 +14,7 @@ public class Carlson extends Alive implements Flyable, WindowWatch, HasFriends, 
 
     @Override
     public boolean WatchThroughWindow(Alive person) {
-        Room temp = this.currentRoom;
-        this.currentRoom = Room.OUTSIDE;
-        if (this.currentRoom == person.currentRoom) {
-            this.currentRoom = temp;
-            return true;
-
-        }
-        this.currentRoom = temp;
-        return false;
+        return person.currentRoom == Room.OUTSIDE;
     }
 
     @Override
