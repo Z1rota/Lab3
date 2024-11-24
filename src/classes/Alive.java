@@ -25,8 +25,8 @@ import java.util.List;
     public String getName() {
         return name;
     };
-    public String getMood() {
-        return ""+mood;
+    public Mood getMood() {
+        return mood;
     }
 
     public Room getCurrentRoom() {
