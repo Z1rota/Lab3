@@ -9,10 +9,7 @@ public class Father extends Alive implements Search {
 
     @Override
     public boolean Search(Alive person) {
-        if (this.currentRoom == person.currentRoom){
-            return true;
-        }
-        return false;
+        return this.currentRoom == person.currentRoom;
     }
 
 

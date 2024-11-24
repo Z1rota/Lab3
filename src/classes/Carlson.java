@@ -27,10 +27,7 @@ public class Carlson extends Alive implements Flyable, WindowWatch, HasFriends, 
 
     @Override
     public boolean Search(Alive person) {
-        if (this.currentRoom == person.currentRoom) {
-            return true;
-        }
-        return false;
+        return this.currentRoom == person.currentRoom;
     }
 
 
