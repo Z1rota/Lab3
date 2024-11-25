@@ -1,6 +1,6 @@
 package org.example.exceptions;
 
-public class InvalidTypeOfArgumentException extends Exception {
+public class InvalidTypeOfArgumentException extends RuntimeException {
 
     @Override
     public String getMessage() {

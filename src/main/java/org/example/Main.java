@@ -1,11 +1,13 @@
 package org.example;
-import org.example.exceptions.*;
+
+import org.example.exceptions.InvalidArgumentException;
+import org.example.exceptions.InvalidTypeOfArgumentException;
 import org.example.persons.*;
 import org.example.world.*;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidTypeOfArgumentException, InvalidArgumentException {
         Father papa = new Father("Андрей",52, Mood.DELIGHTFUL, Room.LIVINGROOM);
         Mother mama = new Mother("Карина", 69, Mood.DELIGHTFUL, Room.LIVINGROOM);
         Baby child = new Baby("Арсений",5,Mood.GOOD, Room.BEDROOM);
@@ -15,12 +17,18 @@ public class Main {
 
         try{
             System.out.println("Выберите погоду:\n1-Хорошая \n2-Плохая");
+            if (!sc.hasNextInt()) {
+                throw new InvalidTypeOfArgumentException();
+            }
             int choice = sc.nextInt();
             if (choice > 2 || choice < 1) {
                 throw new InvalidArgumentException();
             }
             System.out.println("Выберите день недели: \n1-Понедельник\n2-Вторник\n3-Среда\n4-Четверг" +
                     "\n5-Пятница\n6-Суббота\n7-Воскресенье");
+            if (!sc.hasNextInt()) {
+                throw new InvalidTypeOfArgumentException();
+            }
             int choice2 = sc.nextInt();
             if ( choice2 >= 7 || choice2 <= 0) {
                 throw new InvalidArgumentException();
@@ -38,11 +46,11 @@ public class Main {
         } catch (InvalidArgumentException e) {
             System.out.println(e.getMessage());
             System.exit(0);
-        } /*catch (InvalidTypeOfArgumentException e) {
+        } catch (InvalidTypeOfArgumentException e) {
             System.out.println(e.getMessage());
             System.out.println("Введите нужный тип данных");
             System.exit(0);
-        }*/
+        }
     }
 }
 
