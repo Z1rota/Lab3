@@ -3,8 +3,8 @@ package org.example.persons;
 import org.example.interfaces.*;
 
 public class Carlson extends Alive implements Flyable, WindowWatch, HasFriends, Play, Search {
-    public Carlson(String name, int age, Mood mood, Room room) {
-        super(name,age,mood,room);
+    public Carlson(String name, int age, Mood mood, Places places) {
+        super(name,age,mood, places);
     }
 
     @Override
@@ -13,19 +13,19 @@ public class Carlson extends Alive implements Flyable, WindowWatch, HasFriends, 
     }
 
     @Override
-    public String fly(Room room) {
-        this.currentRoom = room;
-        return this.name+" Прилетел на "+room;
+    public String fly(Places places) {
+        this.currentPlaces = places;
+        return this.name+" Прилетел на "+ places;
     }
 
     @Override
-    public boolean WatchThroughWindow(Alive person) {
-        return person.currentRoom == Room.OUTSIDE;
+    public boolean watchThroughWindow(Alive person) {
+        return person.currentPlaces == Places.OUTSIDE;
     }
 
     @Override
     public String search(Alive person) {
-        if (this.currentRoom == person.currentRoom) {
+        if (this.currentPlaces == person.currentPlaces) {
             return this.name + " Нашел " + person.name;
         }
         return this.name + " Не нашел " + person.name;

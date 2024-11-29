@@ -7,18 +7,18 @@ import java.util.List;
     String name;
     int age;
     Mood mood;
-    Room currentRoom;
+    Places currentPlaces;
     List<Object> friendArray = new ArrayList<>();
-    public Alive(String name, int age, Mood mood, Room currentRoom) {
+    public Alive(String name, int age, Mood mood, Places currentPlaces) {
         this.name = name;
         this.age = age;
         this.mood = mood;
-        this.currentRoom = currentRoom;
+        this.currentPlaces = currentPlaces;
     }
 
     public abstract String hello();
-    public void walksTo(Room roomName){
-        currentRoom = roomName;
+    public void walksTo(Places placesName){
+        currentPlaces = placesName;
     }
     public int getAge() {
         return age;
@@ -33,8 +33,8 @@ import java.util.List;
         this.mood = mood;
     }
 
-    public Room getCurrentRoom() {
-        return currentRoom;
+    public Places getCurrentPlace() {
+        return currentPlaces;
     }
     @Override
     public String toString() {

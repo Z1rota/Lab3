@@ -1,6 +1,15 @@
 package org.example.world;
 
 public enum Weather {
-    GOOD,
-    BAD,
+    NORMAL("нормальная"),
+    BAD("плохая");
+
+private String name;
+private Weather(String name) {
+    this.name = name;
+}
+    @Override
+    public String toString() {
+        return name;
+    }
 }

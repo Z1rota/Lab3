@@ -1,7 +1,7 @@
 package org.example.interfaces;
 
-import org.example.persons.Room;
+import org.example.persons.Places;
 
 public interface Flyable {
-    String fly(Room room);
+    String fly(Places places);
 }

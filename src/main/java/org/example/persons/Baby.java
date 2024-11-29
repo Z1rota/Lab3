@@ -4,8 +4,8 @@ import org.example.interfaces.HasFriends;
 import org.example.interfaces.Play;
 
 public class Baby extends Alive implements HasFriends, Play {
-    public Baby(String Name, int age,Mood mood,Room currentRoom){
-        super(Name,age,mood,currentRoom);
+    public Baby(String Name, int age, Mood mood, Places currentPlaces){
+        super(Name,age,mood, currentPlaces);
     }
     @Override
     public void addFriend(Alive friend) {

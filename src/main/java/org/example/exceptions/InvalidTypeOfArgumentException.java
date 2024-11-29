@@ -4,6 +4,6 @@ public class InvalidTypeOfArgumentException extends RuntimeException {
 
     @Override
     public String getMessage() {
-        return "Invalid type of argument";
+        return "Неправильный тип данных, нужно ввести целое число!";
     }
 }

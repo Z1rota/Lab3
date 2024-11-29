@@ -1,9 +1,10 @@
 package org.example.exceptions;
 
-public class InvalidArgumentException extends Exception {
+public class
+InvalidArgumentException extends Exception {
     @Override
     public String getMessage() {
-        return "Invalid argument";
+        return "Неправильное значение, Введите значение из диапазона";
     }
 
 }

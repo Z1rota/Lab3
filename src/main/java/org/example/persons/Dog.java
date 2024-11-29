@@ -4,8 +4,8 @@ import org.example.interfaces.HasFriends;
 import org.example.interfaces.Play;
 
 public class Dog extends Alive implements HasFriends, Play {
-    public Dog(String name, int age, Mood mood, Room room) {
-        super(name,age,mood,room);
+    public Dog(String name, int age, Mood mood, Places places) {
+        super(name,age,mood, places);
 
     }
 
@@ -48,6 +48,6 @@ public class Dog extends Alive implements HasFriends, Play {
 
     @Override
     public String toString() {
-        return "Woof Woof " + name+ " Woof " + age+ " Woof Wooof " + mood + "Wooooof" + currentRoom;
+        return "Woof Woof " + name+ " Woof " + age+ " Woof Wooof " + mood + "Wooooof" + currentPlaces;
     }
 }
